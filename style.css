@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.main-header {
+  text-align: center;
+  font-size: 4rem;
+}
+
+.main-section {
+  margin: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+input[type="text"] {
+  display: block;
+  font-size: 2rem;
+  padding: 2rem 1rem;
+  width: 30rem;
+  height: 3rem;
+  border-radius: 1rem;
+  border: 0.1rem solid;
+}
+
+.form input[type="submit"] {
+  display: block;
+  margin-top: 1rem;
+  /* width: 10rem; */
+  /* text-align: center; */
+  padding: 1rem 4rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: blue;
+  font-size: 2rem;
+  color: white;
+  transition: all 0.2s;
+}
+.form input[type="submit"]:hover {
+  transform: translateY(2px);
+}
+
+.form label {
+  display: block;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.todays-weather-heading {
+  font-size: 3rem;
+  font-weight: 100;
+}
+
+.todays-weather-temp {
+  display: flex;
+  justify-content: space-between;
+}
+.todays-current-temp {
+  font-size: 3rem;
+  font-weight: bolder;
+  justify-self: center;
+}
+.todays-current-icon {
+  width: 5rem;
+  justify-self: center;
+}
+
+.todays-weather-condition {
+  font-size: 3rem;
+}
+.todays-weather-tempminmax {
+  font-size: 2.5rem;
+  font-weight: bolder;
+}
+
+.hourly-time,
+.hourly-temp {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.hourly-icon {
+  width: 2.5rem;
+  padding: 0.8rem 0;
+}
+
+.day {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  /* max-width: 50rem; */
+}
+.todays-weather-hourly {
+  display: flex;
+  gap: 2rem;
+}
+
+.todays-weather-hourly {
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+
+.day-name,
+.day-min-temp,
+.day-max-temp,
+.day-condition {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.day-icon {
+  width: 2rem;
+  /* font-size: 2rem; */
+}
+.day-icon img {
+  width: 100%;
+}
+
+.todays-weather,
+.todays-weather-hourly,
+.next-sevendays-weather {
+  margin-bottom: 2rem;
+  background: rgba(0, 0, 0, 0.137);
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 60rem;
+}
+P.text {
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 0.2rem solid;
+}
+
+.next-sevendays-weather .day {
+  padding: 1rem 0;
+}
+.next-sevendays-weather .day:not(:last-child) {
+  border-bottom: 0.2rem solid;
+}
+.hourly-icon {
+  justify-self: center;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 35%;
+  }
+  .main-section {
+    flex-direction: column;
+  }
+
+  input[type="text"] {
+    width: 50vw;
+  }
+}
