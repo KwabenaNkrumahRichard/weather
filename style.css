@@ -1,3 +1,16 @@
+:root {
+  --color-transparent-black: rgba(0, 0, 0, 0.137);
+}
+
+@keyframes loading {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -55,6 +68,7 @@ input[type="text"] {
 .todays-weather-heading {
   font-size: 3rem;
   font-weight: 100;
+  margin-bottom: 1rem;
 }
 
 .todays-weather-temp {
@@ -73,10 +87,14 @@ input[type="text"] {
 
 .todays-weather-condition {
   font-size: 3rem;
+  margin-bottom: 1rem;
 }
 .todays-weather-tempminmax {
   font-size: 2.5rem;
   font-weight: bolder;
+}
+.max-temp {
+  margin-left: 5rem;
 }
 
 .hourly-time,
@@ -125,7 +143,7 @@ input[type="text"] {
 .todays-weather-hourly,
 .next-sevendays-weather {
   margin-bottom: 2rem;
-  background: rgba(0, 0, 0, 0.137);
+  background: var(--color-transparent-black);
   padding: 2rem;
   border-radius: 1rem;
   width: 60rem;
@@ -144,6 +162,22 @@ P.text {
 }
 .hourly-icon {
   justify-self: center;
+}
+
+.loader {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  border: 2rem solid transparent;
+  border-left: 2rem solid;
+  animation: loading 2s linear infinite;
+  margin: auto;
+}
+
+.error-message {
+  font-size: 5rem;
+  text-align: center;
+  color: red;
 }
 
 @media (max-width: 768px) {
