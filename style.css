@@ -32,6 +32,13 @@ html {
   gap: 1rem;
 }
 
+.weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
 input[type="text"] {
   display: block;
   font-size: 2rem;
@@ -102,9 +109,14 @@ input[type="text"] {
   font-size: 2rem;
   font-weight: bold;
 }
+.hourly-temp {
+  margin-top: 2rem;
+}
 .hourly-icon {
   width: 2.5rem;
+  height: 2.5rem;
   padding: 0.8rem 0;
+  text-align: center;
 }
 
 .day {
@@ -113,6 +125,18 @@ input[type="text"] {
   justify-content: space-between;
   /* max-width: 50rem; */
 }
+.day-condition {
+  width: 14rem;
+}
+.day-name {
+  width: 8rem;
+}
+.day-icon,
+.day-max-temp,
+.day-min-temp {
+  width: 5rem;
+}
+
 .todays-weather-hourly {
   display: flex;
   gap: 2rem;
@@ -160,9 +184,6 @@ P.text {
 .next-sevendays-weather .day:not(:last-child) {
   border-bottom: 0.2rem solid;
 }
-.hourly-icon {
-  justify-self: center;
-}
 
 .loader {
   width: 20rem;
@@ -172,6 +193,12 @@ P.text {
   border-left: 2rem solid;
   animation: loading 2s linear infinite;
   margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
 }
 
 .error-message {
@@ -180,12 +207,31 @@ P.text {
   color: red;
 }
 
+.country {
+  font-size: 5rem;
+  text-align: center;
+  width: 60rem;
+  background-color: orange;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  border-radius: 1rem;
+  background-color: var(--color-transparent-black);
+}
+
 @media (max-width: 768px) {
   html {
     font-size: 35%;
   }
   .main-section {
     flex-direction: column;
+    gap: 5rem;
+  }
+  .todays-weather,
+  .todays-weather-hourly,
+  .next-sevendays-weather,
+  .country {
+    width: 80vw;
   }
 
   input[type="text"] {

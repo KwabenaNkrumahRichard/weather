@@ -21,6 +21,24 @@ let getCondition = function (condition) {
   return [condition.split(",")[0]];
 };
 
+function capitaliseName(name) {
+  if (name.length <= 3) {
+    return name.toUpperCase();
+  }
+  return name
+    .toLowerCase()
+    .split(" ")
+    .map((nameSplit) => nameSplit[0].toUpperCase() + nameSplit.slice(1))
+    .join(" ");
+}
+
+let countryName = function (name) {
+  createContainers("country");
+  let div = document.querySelector(".country");
+
+  div.textContent = capitaliseName(name);
+};
+
 const renderTodaysWeatherUI = function (value) {
   createContainers("todays-weather");
   let div = document.querySelector(".todays-weather");
@@ -55,8 +73,9 @@ const renderTodaysHourlyWeatherUI = function (hours, day) {
 
   createContainers("todays-weather-hourly");
   let div = document.querySelector(".todays-weather-hourly");
+
   hours.forEach((hour) => {
-    let dayHour = new Date(`${dayDate},${hour.datetime}`).getHours();
+    let dayHour = new Date(`${dayDate}T${hour.datetime}`).getHours();
     let todayHourlyHTML = `<div class="hourly">
                               <p class="hourly-time">${
                                 currentHour === dayHour
@@ -86,9 +105,6 @@ let displayDay = function (value) {
 };
 
 const renderNextSevendaysUI = function (days) {
-  // let div = document.createElement("div");
-  // div.classList.add("next-sevendays-weather");
-  // weatherContainer.append(div);
   createContainers("next-sevendays-weather");
   let div = document.querySelector(".next-sevendays-weather");
 
@@ -125,4 +141,5 @@ export {
   weatherContainer,
   renderTodaysHourlyWeatherUI,
   renderNextSevendaysUI,
+  countryName,
 };
